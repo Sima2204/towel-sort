@@ -3,21 +3,25 @@
 
 module.exports = function towelSort (matrix) {
 
-  const matrixKeys = Object.keys(matrix);
-  const matrixValues = Object.values(matrix);
+    if (!matrix) {
+        return [];
+    } else {
 
-  if (matrixKeys.length === 0) {
-      return [];
-      
-  } else {
+        const matrixKeys = Object.keys(matrix);
+        const matrixValues = Object.values(matrix);
 
-      for (let i = 1; i < matrixKeys.length; i = i + 2) {
-          matrixValues[i].reverse();
-      }
-  
-      let result = [].concat(...matrixValues);
-      return result;
+        if (matrixKeys.length === 0) {
+            return [];
+        } else {
 
-  }
-  
+            for (let i = 1; i < matrixKeys.length; i = i + 2) {
+                matrixValues[i].reverse();
+            }
+    
+            let result = [].concat(...matrixValues);
+            return result;
+
+        }
+    }
+ 
 }
